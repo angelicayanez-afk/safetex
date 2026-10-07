@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAFETEX | Ropa Deportiva</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f7f7f7;
+            color: #171717;
+        }
+
+        /* ---------- BARRA DE NAVEGACIÓN ---------- */
+
+        nav {
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #111;
+        }
+
+        .logo span {
+            color: #7c3aed;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #222;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #7c3aed;
+        }
+
+        /* ---------- INICIO ---------- */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background:
+                radial-gradient(circle at 80% 20%, #d9c5ff 0%, transparent 30%),
+                linear-gradient(135deg, #f8f8f8, #eeeeee);
+            overflow: hidden;
+        }
+
+        .hero-text {
+            width: 55%;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 100px);
+            line-height: .9;
+            font-weight: 900;
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            color: #7c3aed;
+        }
+
+        .hero p {
+            margin-top: 25px;
+            max-width: 520px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 28px;
+            background: #171717;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        .hero-shape {
+            width: 400px;
+            height: 500px;
+            background: #171717;
+            border-radius: 50% 50% 20px 20px;
+            transform: rotate(8deg);
+            margin-left: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-shape::after {
+            content: "MOVE";
+            color: white;
+            font-size: 60px;
+            font-weight: 900;
+            transform: rotate(-8deg);
+            letter-spacing: -3px;
+        }
+
+        /* ---------- SECCIONES ---------- */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ---------- PRODUCTOS ---------- */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+            transition: .3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+        }
+
+        .product-img {
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            background: #ece7ff;
+        }
+
+        .product:nth-child(2) .product-img {
+            background: #e7e7e7;
+        }
+
+        .product:nth-child(3) .product-img {
+            background: #ded6ff;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .price {
+            display: block;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ---------- NOSOTROS ---------- */
+
+        .about {
+            background: #171717;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .about h2 span {
+            color: #a78bfa;
+        }
+
+        .about p {
+            color: #d1d1d1;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .value {
+            border: 1px solid #444;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .value h3 {
+            margin-bottom: 10px;
+            color: #a78bfa;
+        }
+
+        .value p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* ---------- BENEFICIOS ---------- */
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .benefit {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,.05);
+        }
+
+        .benefit .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .benefit h3 {
+            margin-bottom: 10px;
+        }
+
+        .benefit p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* ---------- CONTACTO ---------- */
+
+        .contact {
+            background: #eeeaff;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer strong {
+            color: #a78bfa;
+        }
+
+        footer p {
+            margin-top: 8px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* ---------- CELULAR ---------- */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 11px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+            }
+
+            .hero-shape {
+                width: 260px;
+                height: 300px;
+                margin: 50px auto 0;
+            }
+
+            .hero-shape::after {
+                font-size: 40px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .values {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN -->
+
+    <nav>
+        <div class="logo">SAFE<span>TEX</span></div>
+
+        <ul>
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#productos">PRODUCTOS</a></li>
+            <li><a href="#nosotros">NOSOTROS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- INICIO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-text">
+
+            <span class="tag">ROPA DEPORTIVA • ESTILO • COMODIDAD</span>
+
+            <h1>
+                MOVE<br>
+                WITH<br>
+                <span>SAFETEX.</span>
+            </h1>
+
+            <p>
+                Ropa deportiva diseñada para acompañarte
+                en cada movimiento. Comodidad, estilo y
+                confianza para sentirte bien mientras entrenas.
+            </p>
+
+            <a href="#productos" class="btn">
+                CONOCE NUESTRA COLECCIÓN →
+            </a>
+
+        </div>
+
+        <div class="hero-shape"></div>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+
+    <section id="productos">
+
+        <div class="section-title">
+
+            <h2>Nuestra colección</h2>
+
+            <p>
+                Diseñada para acompañarte dentro y fuera del entrenamiento.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <div class="product-img">
+                    👕
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Playeras deportivas</h3>
+
+                    <p>
+                        Diseños cómodos y versátiles para
+                        tus entrenamientos y actividades diarias.
+                    </p>
+
+                    <span class="price">Desde $399</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-img">
+                    🩳
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Shorts deportivos</h3>
+
+                    <p>
+                        Libertad de movimiento y comodidad
+                        para acompañarte en cada ejercicio.
+                    </p>
+
+                    <span class="price">Desde $349</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-img">
+                    👚
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Conjuntos deportivos</h3>
+
+                    <p>
+                        Combina estilo y funcionalidad con
+                        prendas pensadas para sentirte seguro.
+                    </p>
+
+                    <span class="price">Desde $699</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+
+    <section class="about" id="nosotros">
+
+        <div>
+
+            <h2>
+                Muévete.<br>
+                Siéntete <span>tú.</span>
+            </h2>
+
+            <p>
+                SAFETEX nace con la idea de ofrecer ropa deportiva
+                que permita a las personas sentirse cómodas,
+                seguras y auténticas mientras comienzan o
+                continúan su camino en el ejercicio.
+                <br><br>
+                Creemos que la ropa deportiva no debe ser una
+                barrera para comenzar a entrenar, sino una herramienta
+                para sentirte más cómodo y seguro de ti mismo.
+            </p>
+
+        </div>
+
+
+        <div class="values">
+
+            <div class="value">
+
+                <h3>COMODIDAD</h3>
+
+                <p>
+                    Prendas pensadas para acompañar
+                    tu movimiento.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <h3>CALIDAD</h3>
+
+                <p>
+                    Buscamos ofrecer productos duraderos
+                    y funcionales.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <h3>ESTILO</h3>
+
+                <p>
+                    Diseños modernos para que puedas
+                    expresarte.
+                </p>
+
+            </div>
+
+
+            <div class="value">
+
+                <h3>ACCESIBILIDAD</h3>
+
+                <p>
+                    Queremos que sentirte bien al entrenar
+                    sea para todos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFICIOS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>¿Por qué SAFETEX?</h2>
+
+            <p>
+                Porque comenzar a entrenar también debe sentirse bien.
+            </p>
+
+        </div>
+
+
+        <div class="benefits">
+
+            <div class="benefit">
+
+                <div class="icon">⚡</div>
+
+                <h3>Libertad</h3>
+
+                <p>
+                    Diseños pensados para permitir
+                    movimiento.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="icon">✨</div>
+
+                <h3>Estilo</h3>
+
+                <p>
+                    Una imagen moderna sin sacrificar
+                    comodidad.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="icon">💪</div>
+
+                <h3>Confianza</h3>
+
+                <p>
+                    Siéntete cómodo y seguro
+                    mientras entrenas.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="icon">🤝</div>
+
+                <h3>Accesibilidad</h3>
+
+                <p>
+                    Opciones pensadas para diferentes
+                    necesidades y presupuestos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section class="contact" id="contacto">
+
+        <h2>¿Listo para moverte?</h2>
+
+        <p>
+            Conoce SAFETEX y encuentra tu próximo outfit deportivo.
+        </p>
+
+        <div class="contact-info">
+
+            📍 Irapuato, Guanajuato<br><br>
+
+            📱 Instagram: @safetex.mx<br><br>
+
+            ✉️ contacto@safetex.mx
+
+        </div>
+
+        <a href="#inicio" class="btn">
+            VOLVER AL INICIO ↑
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <strong>SAFETEX</strong>
+
+        <p>
+            Ropa deportiva para moverte con confianza.
+        </p>
+
+        <p>
+            © 2026 SAFETEX. Proyecto académico.
+        </p>
+
+    </footer>
+
+</body>
+</html>
