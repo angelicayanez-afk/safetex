@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,7 +67,7 @@
             color: #7c3aed;
         }
 
-        /* ---------- INICIO ---------- */
+        /* ---------- BANNER PRINCIPAL ---------- */
 
         .hero {
             min-height: 88vh;
@@ -74,13 +75,22 @@
             align-items: center;
             padding: 70px 8%;
             background:
-                radial-gradient(circle at 80% 20%, #d9c5ff 0%, transparent 30%),
-                linear-gradient(135deg, #f8f8f8, #eeeeee);
+                linear-gradient(
+                    90deg,
+                    rgba(15, 15, 15, 0.94) 0%,
+                    rgba(15, 15, 15, 0.78) 42%,
+                    rgba(15, 15, 15, 0.20) 100%
+                ),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85")
+                center 45% / cover no-repeat;
             overflow: hidden;
+            color: white;
         }
 
         .hero-text {
             width: 55%;
+            position: relative;
+            z-index: 1;
         }
 
         .tag {
@@ -103,7 +113,7 @@
         }
 
         .hero h1 span {
-            color: #7c3aed;
+            color: #a78bfa;
         }
 
         .hero p {
@@ -111,7 +121,7 @@
             max-width: 520px;
             font-size: 18px;
             line-height: 1.6;
-            color: #555;
+            color: #f0f0f0;
         }
 
         .btn {
@@ -129,28 +139,6 @@
         .btn:hover {
             background: #7c3aed;
             transform: translateY(-2px);
-        }
-
-        .hero-shape {
-            width: 400px;
-            height: 500px;
-            background: #171717;
-            border-radius: 50% 50% 20px 20px;
-            transform: rotate(8deg);
-            margin-left: auto;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-shape::after {
-            content: "MOVE";
-            color: white;
-            font-size: 60px;
-            font-weight: 900;
-            transform: rotate(-8deg);
-            letter-spacing: -3px;
         }
 
         /* ---------- SECCIONES ---------- */
@@ -370,7 +358,11 @@
 
             .hero {
                 flex-direction: column;
+                justify-content: center;
                 text-align: center;
+                background-position: center;
+                min-height: 75vh;
+                padding: 65px 6%;
             }
 
             .hero-text {
@@ -379,16 +371,13 @@
 
             .hero h1 {
                 font-size: 65px;
+                letter-spacing: -3px;
             }
 
-            .hero-shape {
-                width: 260px;
-                height: 300px;
-                margin: 50px auto 0;
-            }
-
-            .hero-shape::after {
-                font-size: 40px;
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 16px;
             }
 
             .products {
@@ -426,8 +415,7 @@
         </ul>
     </nav>
 
-
-    <!-- INICIO -->
+    <!-- BANNER PRINCIPAL -->
 
     <section class="hero" id="inicio">
 
@@ -453,10 +441,7 @@
 
         </div>
 
-        <div class="hero-shape"></div>
-
     </section>
-
 
     <!-- PRODUCTOS -->
 
@@ -471,7 +456,6 @@
             </p>
 
         </div>
-
 
         <div class="products">
 
@@ -496,7 +480,6 @@
 
             </div>
 
-
             <div class="product">
 
                 <div class="product-img">
@@ -517,7 +500,6 @@
                 </div>
 
             </div>
-
 
             <div class="product">
 
@@ -544,7 +526,6 @@
 
     </section>
 
-
     <!-- NOSOTROS -->
 
     <section class="about" id="nosotros">
@@ -569,7 +550,6 @@
 
         </div>
 
-
         <div class="values">
 
             <div class="value">
@@ -583,7 +563,6 @@
 
             </div>
 
-
             <div class="value">
 
                 <h3>CALIDAD</h3>
@@ -595,7 +574,6 @@
 
             </div>
 
-
             <div class="value">
 
                 <h3>ESTILO</h3>
@@ -606,7 +584,6 @@
                 </p>
 
             </div>
-
 
             <div class="value">
 
@@ -623,7 +600,6 @@
 
     </section>
 
-
     <!-- BENEFICIOS -->
 
     <section>
@@ -637,7 +613,6 @@
             </p>
 
         </div>
-
 
         <div class="benefits">
 
@@ -654,7 +629,6 @@
 
             </div>
 
-
             <div class="benefit">
 
                 <div class="icon">✨</div>
@@ -668,7 +642,6 @@
 
             </div>
 
-
             <div class="benefit">
 
                 <div class="icon">💪</div>
@@ -681,7 +654,6 @@
                 </p>
 
             </div>
-
 
             <div class="benefit">
 
@@ -699,7 +671,6 @@
         </div>
 
     </section>
-
 
     <!-- CONTACTO -->
 
@@ -726,7 +697,6 @@
         </a>
 
     </section>
-
 
     <!-- FOOTER -->
 
